@@ -1,2 +1,4 @@
-# GroganKimSouthwellVogel
-Group CG, AK, DS, RV
+# Group Name: GroganKimSouthwellVogel
+Group CGrogan, AKim, DSouthwell, RVogel
+
+This group is Awesome, dude.
