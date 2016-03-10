@@ -15,7 +15,6 @@ void setup(void)
 {
 
 Serial.begin(9600);
-//esp8266.begin();
 pinMode(HeaterPin,OUTPUT);
 digitalWrite(HeaterPin,LOW);
 // Start up the library
@@ -30,23 +29,27 @@ void loop(void)
   Serial.print("Requesting temperatures...");
   sensors.requestTemperatures(); // Send the command to get temperatures
   Serial.println("DONE");
+// prints current temperature on serialwrite
   Serial.print("Temperature for Device 1 is: ");
   float Temp;
-  Serial.print(sensors.getTempCByIndex(0)); // Why "byIndex"? You can have more than one IC on the same bus. 0 refers to the first IC on the wire
+  Serial.print(sensors.getTempCByIndex(0));
   Temp = sensors.getTempCByIndex(0);
 
+//lower bound specification
   if(Temp<24)
   {
-    counterLow = counterLow +5;
+    counterLow = counterLow +1;
   
   }
-  if (counterLow>= 5)
+  if (counterLow>= 1)
   {
     digitalWrite(HeaterPin,HIGH);
   }
+  //specifying upper bound
   if(Temp>26)
   //desired range is 24-28
   {
+    //reseting counter to turn off
     counterLow = 0;
     digitalWrite(HeaterPin,LOW);
   }
