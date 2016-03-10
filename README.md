@@ -1,2 +1,2 @@
-The main purpose of this script is to mantian a temperature range in a container of water. If the temperature were to reach its specified lower bound, the heater would turn on and would subsequently turn off once the specified upper bound was reached. 
+The main purpose of this script is to mantain a temperature range in a container of water. If the temperature were to reach its specified lower bound, the heater would turn on and would subsequently turn off once the specified upper bound was reached. 
 This code would be outputted to an Arduino board connected to a power adapter and a temperature sensor. The temperature sensor uses SerialOutput to print out the temperatures detected. 
